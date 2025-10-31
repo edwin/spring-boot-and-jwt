@@ -1,5 +1,7 @@
 package com.edw.controller;
 
+import com.edw.service.HelloWorldService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,8 +21,16 @@ import java.util.HashMap;
 @RestController
 public class HelloWorldController {
 
+    private HelloWorldService helloWorldService;
+
+    @Autowired
+    public void setHelloWorldService(HelloWorldService helloWorldService) {
+        this.helloWorldService = helloWorldService;
+    }
+
     @GetMapping("/")
     public ResponseEntity<HashMap> helloWorld() {
+        helloWorldService.sayHello();
         return ResponseEntity.ok(new HashMap<String, Object>() {{
             put("message", "Hello World!");
         }});
