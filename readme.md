@@ -103,6 +103,26 @@ mvn test
 
 The project includes comprehensive tests for JWT token generation and validation.
 
+### Test Classes
+
+#### JwtUtilsTest
+
+Located in `src/test/java/com/edw/JwtUtilsTest.java`, this test class verifies the functionality of the JWT utility class:
+
+- **Token Generation**: Tests that tokens are correctly generated with proper claims
+- **Token Validation**: Validates that the system correctly identifies:
+  - Valid tokens
+  - Invalid/malformed tokens
+  - Empty tokens
+  - Expired tokens
+
+#### HelloWorldControllerTest
+
+Located in `src/test/java/com/edw/controller/HelloWorldControllerTest.java`, this test class verifies the REST API functionality:
+
+- **Authentication Testing**: Verifies that accessing the endpoint without a JWT token returns HTTP 500
+- **Endpoint Functionality**: Confirms that accessing the endpoint with a valid JWT token returns HTTP 200 and the correct "Hello World!" message
+
 ## Configuration
 
 The application configuration is in `src/main/resources/application.properties`:

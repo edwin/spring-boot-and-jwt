@@ -6,8 +6,6 @@ import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.test.util.ReflectionTestUtils;
 
 import java.security.Key;
@@ -23,7 +21,6 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author Muhammad Edwin < edwin at redhat dot com >
  * 31 Oct 2025 16:19
  */
-
 public class JwtUtilsTest {
 
     private JwtUtils jwtUtils;
